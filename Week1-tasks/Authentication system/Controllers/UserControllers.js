@@ -41,7 +41,7 @@ class UserController {
                 // Generating JWT token
                 const token  = creatToken(user._id)
                 res.cookie("jwt", token, {httpOnly:true, maxAge:maxAge * 1000})
-                res.redirect('/login')
+                res.redirect('/profile')
             }
             else{
                 res.send("Email id Already Exist")
@@ -63,9 +63,9 @@ class UserController {
                     // console.log(user._id)
                     const token  = creatToken(user._id)
                     res.cookie("jwt", token, {httpOnly:true, maxAge:maxAge * 1000})
-                    res.render('profile', {title:"Profile", username:user.name})
+                    res.redirect('/profile')
                 }
-                else{
+                else{   
                     res.render("InvalidCredentials", {message:"Incorrect Email or Password"})
                 }
             }

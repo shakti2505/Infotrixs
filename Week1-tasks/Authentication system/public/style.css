@@ -1,0 +1,14 @@
+body{
+    width: 100%;
+    background-image: url('/tech6.png');
+    background-size: cover;
+}
+.form{
+    background-color:#120e0e;
+    opacity: 0.5;
+    color: white;   
+}
+.profile{
+   width: 100%;
+   background-size: cover;
+}

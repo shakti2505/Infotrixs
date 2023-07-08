@@ -2,25 +2,24 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     name: {
         type :String, 
-        required:[true, "Please enter a full name"],
+        required:true,
         trim:true,
         minLength:5
     }, 
     email:{
         type: String,
-        required:[true, "Please enter an email Address"],
+        required:true,
         lowercase: true,
     },
     mobile:{
         type: String,
-        required: [true, "Please enter Mobile"],
+        required: true,
         trim:true
     },
     password:{
         type:String,
-        required: [true, "Please enter Password"],
+        required: true,
         trim:true,
-        minLength:[6, "Password min length is 6 character"]
     }
 })
 //Model
