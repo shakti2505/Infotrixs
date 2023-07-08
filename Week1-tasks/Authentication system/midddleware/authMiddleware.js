@@ -15,9 +15,8 @@ class Authmiddleware {
     }
 
     static  CheckUser = (req, res,  next)=>{
-        console.log("check user middle ware working")
         const token = req.cookies.jwt;
-        console.log(token)
+        // console.log(token)
         if(token){
             jwt.verify(token, process.env.JWT_SECRET_KEY, async (err, decodeToken)=>{
                 if(err){

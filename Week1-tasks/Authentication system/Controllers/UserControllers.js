@@ -58,9 +58,8 @@ class UserController {
             const {email, password} = req.body
             const user = await UserModel.findOne({email:email})
             if(user!=null){
-                const passMatch = bcrypt.compare(password, user.password)
+                const passMatch = await bcrypt.compare(password, user.password)
                 if(user.email==email && passMatch){
-                    // console.log(user._id)
                     const token  = creatToken(user._id)
                     res.cookie("jwt", token, {httpOnly:true, maxAge:maxAge * 1000})
                     res.redirect('/profile')
